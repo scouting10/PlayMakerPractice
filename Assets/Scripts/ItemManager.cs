@@ -29,7 +29,7 @@ public class ItemManager : MonoBehaviour
 
     public void AddScore()
     {
-        //GameManagerに
+        GameManager._instance.CountScore(100);
     }
 
 }

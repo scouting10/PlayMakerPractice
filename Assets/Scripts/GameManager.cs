@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 	static public GameManager _instance;
-	
+	private int _currentScore;
 	public CameraPosition CameraPos;
 	public PlayerPosition PlayerPos;
 	
@@ -40,6 +40,12 @@ public class GameManager : MonoBehaviour
 			CameraPos.IsFollowing = false;
 			CameraPos.IsLookingOff = true;
 		}
+	}
+
+	public void CountScore(int score)
+	{
+		_currentScore += score;
+		Debug.Log(_currentScore);
 	}
 
 		
