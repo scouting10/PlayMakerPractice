@@ -875,8 +875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cadcbf30d5a4b39b30b9fd5ee38ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DefaultItems: 10
   ItemPrefab: {fileID: 1814281161812466, guid: 72921c5762d1344b0a334ef8ca2b7599, type: 2}
-  DefaultItemNumber: 10
   ItemManagers:
   - {fileID: 0}
   - {fileID: 0}

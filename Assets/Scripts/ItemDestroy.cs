@@ -2,13 +2,16 @@
 
 public class ItemDestroy : MonoBehaviour
 {
+    public ItemManager ItemManager;
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Destroyの前");
             gameObject.SetActive(false);
-            Debug.Log("Destroyの後");
+            Debug.Log("before");
+            GameManager._instance.CheckItemStat();
+            Debug.Log("after");
         }
     }
 }

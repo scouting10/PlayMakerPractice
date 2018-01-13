@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	static public GameManager _instance;
+	
 	public CameraPosition CameraPos;
 	public PlayerPosition PlayerPos;
 	public ItemGenerator ItemGenerator;
-	public ItemManager[] ItemManagers;
+	public ItemManager ItemManager;
 	
-	// Use this for initialization
-	void Start () {
-		
+	void Awake()
+	{
+		if(_instance == null)
+		{
+			_instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
 
+	void Update () 
+	{
 		CameraController();
-		CheckItemStat();
 	}
 
 	void CameraController()
@@ -36,15 +44,14 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void CheckItemStat()
+	public void CheckItemStat()
 	{
-		for(int i = 0;i < ItemManagers.Length;i++)
+		for(int i = 0;i < ItemGenerator.ItemList.Count;i++)
 		{
-			if(!ItemManagers[i].gameObject.activeSelf)
+			if(!ItemGenerator.ItemList[i].gameObject.activeSelf)
 			{
-				ItemGenerator.ReActivateItem(ItemManagers[i].gameObject);
+				ItemGenerator.ReActivateItem(ItemGenerator.ItemList[i].gameObject);
 			}
 		}
-	}
-	
+	}	
 }

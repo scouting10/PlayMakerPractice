@@ -5,31 +5,38 @@ using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour
 {
-	private const float ITEM_Y = 0.5f;
+	private const float ITEM_POSITION_Y = 0.5f;
 	
-	public GameObject ItemPrefab;
-	public int DefaultItemNumber;
-	public ItemManager[] ItemManagers;
-
-	private int _currentSet;
+	[SerializeField]
+	private int DefaultItems;
+	
+	private int _currentItems;
 	private Vector3 _intPos;
+
+	public bool Ready = false;
+	public GameObject ItemPrefab;
+	public List<GameObject> ItemList = new List<GameObject>();
 
 	// Use this for initialization
 	void Start ()
 	{
-		_currentSet = DefaultItemNumber;
-
-		for(int i=0;i<DefaultItemNumber;i++)
+		_currentItems = DefaultItems;
+		
+		for(int i=0;i<DefaultItems;i++)
 		{
-			GenerateItem(i);
+			GenerateItem();
 		}
+		Debug.Log("after_GenerateItem10");
+		Ready = true;
+		Debug.Log("Ready = true");
 	}
 	
-	void GenerateItem(int i)
+	// 何がやりたいのここ？ItemManagerはItemにアタッチされてないし、、、ItemをInstantiateして、ItemManagerの0番に何か入ってるの？？
+	void GenerateItem()
 	{
-		_intPos = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_Y, Random.Range(-9.0f, 9.0f));
+		_intPos = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_POSITION_Y, Random.Range(-9.0f, 9.0f));
 		GameObject item = Instantiate(ItemPrefab);
-		ItemManagers[i].Instance = item;
+		ItemList.Add(item);
 		item.transform.parent = gameObject.transform;
 		item.transform.position = _intPos;
 		item.transform.Rotate(transform.up, Random.Range(0,360));
@@ -39,7 +46,7 @@ public class ItemGenerator : MonoBehaviour
 	// Itemが壊れたときに、GameManager経由で呼ばれるもの。
 	public void ReActivateItem(GameObject item)
 	{
-		item.transform.position = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_Y, Random.Range(-9.0f, 9.0f));
+		item.transform.position = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_POSITION_Y, Random.Range(-9.0f, 9.0f));
 		item.transform.Rotate(transform.up, Random.Range(0,360));
 		item.SetActive(true);
 	}
