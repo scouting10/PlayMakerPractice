@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    static public ItemManager _instance;
+
     public ItemGenerator ItemGenerator;
 
+    void Awake()
+    {
+        _instance = this;
+    }
     void Start()
     {
         ItemGenerator.SpawnItems();
