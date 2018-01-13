@@ -8,10 +8,10 @@ public class ItemDestroy : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            gameObject.SetActive(false);
-            Debug.Log("before");
-            GameManager._instance.CheckItemStat();
-            Debug.Log("after");
+            ItemManager.CheckItemStat();
+            ItemManager.AddScore();
+            //gameObject.SetActive(false);
+            Debug.Log("destroy");
         }
     }
 }

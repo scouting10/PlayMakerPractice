@@ -9,16 +9,16 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1956377205680088}
+  m_RootGameObject: {fileID: 1252984354865824}
   m_IsPrefabParent: 1
---- !u!1 &1956377205680088
+--- !u!1 &1252984354865824
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4414132381306704}
+  - component: {fileID: 4961914824243908}
   m_Layer: 0
   m_Name: ItemManager
   m_TagString: Untagged
@@ -26,12 +26,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4414132381306704
+--- !u!4 &4961914824243908
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1956377205680088}
+  m_GameObject: {fileID: 1252984354865824}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.318324, y: 0, z: -1.4176352}
   m_LocalScale: {x: 1, y: 1, z: 1}

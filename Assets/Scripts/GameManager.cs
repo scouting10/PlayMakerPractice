@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 	
 	public CameraPosition CameraPos;
 	public PlayerPosition PlayerPos;
-	public ItemGenerator ItemGenerator;
-	public ItemManager ItemManager;
 	
 	void Awake()
 	{
@@ -44,14 +42,5 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void CheckItemStat()
-	{
-		for(int i = 0;i < ItemGenerator.ItemList.Count;i++)
-		{
-			if(!ItemGenerator.ItemList[i].gameObject.activeSelf)
-			{
-				ItemGenerator.ReActivateItem(ItemGenerator.ItemList[i].gameObject);
-			}
-		}
-	}	
+		
 }
