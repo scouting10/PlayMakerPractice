@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 	static public GameManager _instance;
-	private int _currentScore;
+	public int _currentScore;
 	public CameraPosition CameraPos;
 	public PlayerPosition PlayerPos;
 	

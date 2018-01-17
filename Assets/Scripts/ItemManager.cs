@@ -11,6 +11,7 @@ public class ItemManager : MonoBehaviour
     {
         _instance = this;
     }
+    
     void Start()
     {
         ItemGenerator.SpawnItems();
