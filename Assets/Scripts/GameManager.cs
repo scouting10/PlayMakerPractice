@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
 	public void CountScore(int score)
 	{
 		_currentScore += score;
-		Debug.Log(_currentScore);
 	}
 
 		
