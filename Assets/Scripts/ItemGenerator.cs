@@ -37,6 +37,7 @@ public class ItemGenerator : MonoBehaviour
 	{
 		_intPos = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_POSITION_Y, Random.Range(-9.0f, 9.0f));
 		GameObject item = Instantiate(ItemPrefab);
+		item.GetComponent<ItemParticleController>().Play_ItemBirthParticle();
 		ItemList.Add(item);
 		item.transform.position = _intPos;
 		item.transform.Rotate(transform.up, Random.Range(0,360));
@@ -49,7 +50,8 @@ public class ItemGenerator : MonoBehaviour
 		Debug.Log("ReActivateよばれた");
 		item.transform.position = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_POSITION_Y, Random.Range(-9.0f, 9.0f));
 		item.transform.Rotate(transform.up, Random.Range(0,360));
-		item.SetActive(true);
+		item.transform.GetChild(0).gameObject.SetActive(true);
+		item.GetComponent<ItemParticleController>().Play_ItemBirthParticle();
 	}
 	
 }

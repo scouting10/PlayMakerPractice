@@ -2,19 +2,27 @@
 
 public class ItemDestroy : MonoBehaviour
 {
+    private ItemParticleController _itemParticleController;
+    
+    void Awake()
+    {
+        _itemParticleController = GetComponentInParent<ItemParticleController>();
+    }
+    
     void Start()
     {
-        Debug.Log("Itemの位置:" + transform.position);
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            ItemManager._instance.CheckItemStat();
+            _itemParticleController.ResetAllParticles();
+            ItemManager._instance.CheckItemBodyStat();
             ItemManager._instance.AddScore();
-            //_itemBreak.SetActive(true);
             gameObject.SetActive(false);
+            _itemParticleController.Play_ItemBreakParticle();
+            Debug.Log("ItemDestroyでPlay_Particleよばれた");
         }
     }
 }
