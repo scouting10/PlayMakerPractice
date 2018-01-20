@@ -52,6 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DefaultItems: 10
-  Ready: 0
-  ItemPrefab: {fileID: 1814281161812466, guid: 72921c5762d1344b0a334ef8ca2b7599, type: 2}
+  ItemPrefab: {fileID: 1387367619829474, guid: 72921c5762d1344b0a334ef8ca2b7599, type: 2}
   ItemList: []
