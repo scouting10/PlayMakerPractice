@@ -46,6 +46,7 @@ public class ItemGenerator : MonoBehaviour
 	// Itemが壊れたときに、ItemManager経由でItemDestroyから呼ばれる。
 	public void ReActivateItem(GameObject item)
 	{
+		Debug.Log("ReActivateよばれた");
 		item.transform.position = new Vector3(Random.Range(-9.0f, 9.0f),ITEM_POSITION_Y, Random.Range(-9.0f, 9.0f));
 		item.transform.Rotate(transform.up, Random.Range(0,360));
 		item.SetActive(true);

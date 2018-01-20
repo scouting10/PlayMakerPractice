@@ -19,10 +19,13 @@ public class ItemManager : MonoBehaviour
 
     public void CheckItemStat()
 	{
+        Debug.Log("CheckItemStat呼ばれた");
 		for(int i = 0;i < ItemGenerator.ItemList.Count;i++)
 		{
+            Debug.Log("forに入った。iの値　＝"+i);
 			if(!ItemGenerator.ItemList[i].gameObject.activeSelf)
 			{
+                Debug.Log("ifに入った");
 				ItemGenerator.ReActivateItem(ItemGenerator.ItemList[i].gameObject);
 			}
 		}
